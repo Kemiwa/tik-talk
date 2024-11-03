@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import {NgOptimizedImage} from '@angular/common';
+import {Component, Input} from '@angular/core';
+import {Profile} from '../../data/interfaces/profile.interface';
+import {ImgUrlPipe} from '../../helpers/pipes/img-url.pipe';
 
 @Component({
   selector: 'app-profile-card',
   standalone: true,
   imports: [
-    NgOptimizedImage
+    ImgUrlPipe
   ],
 
 
@@ -13,5 +14,5 @@ import {NgOptimizedImage} from '@angular/common';
   styleUrl: './profile-card.component.scss'
 })
 export class ProfileCardComponent {
-
+  @Input() profile!: Profile;
 }

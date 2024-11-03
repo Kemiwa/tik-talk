@@ -1,27 +1,35 @@
-<div class="profile-card">
-  <!-- Avatar and name -->
-  <div class="avatar-name">
-    <!-- Avatar img -->
-    <img src="/assets/img/ryan.png" alt="avatar" class="profile-card__avatar" height="72" width="71">
-    <!-- Name and nickname -->
-    <div class="profile-card__name">
-      <strong class="h6">Райан Гослинг</strong>
-      <span class="subtitle">ryan.gosling</span>
+@if (profile) {
+  <div class="profile-card">
+    <!-- Avatar and name -->
+    <div class="avatar-name">
+      <!-- Avatar img -->
+      <img
+        [src]="profile.avatarUrl | imgUrl"
+        [alt]="profile.lastName"
+        class="profile-card__avatar">
+      <!-- Name and nickname -->
+      <div class="profile-card__name">
+        <strong class="h6">{{ profile.firstName }} {{ profile.lastName }}</strong>
+        <span class="subtitle">{{ profile.username }}</span>
+      </div>
+    </div>
+    <!-- Description -->
+    <div class="profile-card__description">
+       {{ profile.description }}
+    </div>
+    <!-- Skill tags -->
+    <div class="profile-card__tags">
+      @for (skill of profile.stack; track skill){
+        <div class="skill-tag">{{ skill }}</div>
+      }
+    </div>
+    <!-- Action Buttons -->
+    <div class="profile-card__action-buttons">
+      <button class="btn">Подписаться</button>
     </div>
   </div>
-  <!-- Description -->
-  <div class="profile-card__description">
-    Список навыков, который мы обсудили выше, — основа резюме, но не единственная его часть. Также можно рассказать о себе в классическом смысле — этот раздел можно добавить в сопроводительное письмо.
+} @else {
+  <div class="not-found">
+    Sorry, there is no data =(
   </div>
-  <!-- Skill tags -->
-  <div class="profile-card__tags">
-    <div class="skill-tag">Angular</div>
-    <div class="skill-tag">HTML</div>
-    <div class="skill-tag">CSS</div>
-    <div class="skill-tag">REST</div>
-  </div>
-  <!-- Action Buttons -->
-  <div class="profile-card__action-buttons">
-    <button class="btn">Подписаться</button>
-  </div>
-</div>
+}
