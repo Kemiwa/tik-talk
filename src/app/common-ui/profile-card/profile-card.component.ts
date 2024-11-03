@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-profile-card',
   standalone: true,
-  imports: [],
+  imports: [
+    NgOptimizedImage
+  ],
 
 
   templateUrl: './profile-card.component.html',
