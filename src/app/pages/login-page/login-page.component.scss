@@ -9,3 +9,22 @@
 .login-form{
   width: 70%;
 }
+
+.password-input{
+  position: relative;
+}
+
+.password-eye-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12px;
+  background: none;
+  border: none;
+  color: #FFFFBF;
+  cursor: pointer;
+}
+
+.password-eye-btn.active{
+  color: var(--primary-color);
+}

@@ -4,7 +4,6 @@ import {HttpClient} from '@angular/common/http';
 import {TokenResponse} from './auth.interface';
 import {catchError, tap, throwError} from 'rxjs';
 import {CookieService} from 'ngx-cookie-service';
-import * as url from 'node:url';
 import {Router} from '@angular/router';
 
 @Injectable({
